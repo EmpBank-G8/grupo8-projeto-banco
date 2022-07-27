@@ -8,14 +8,17 @@ public class ContaPoupanca extends ContaPrincipal{
         super(cpf, nome, senha);
     }
 
-    public double correcao(int dataInformada, double saldo){
-        if (dataInformada>=diaAniversarioPoupanca){
-            return (saldo*0.05) + saldo;
+    public void correcao(int dataInformada){
+        if (dataInformada > diaAniversarioPoupanca){
+            this.credito(this.getSaldo() * (0.5 / 100));
         }
-        return saldo;
     }
 
+    public int getDiaAniversarioPoupanca() {
+        return diaAniversarioPoupanca;
+    }
 
-
-
+    public void setDiaAniversarioPoupanca(int diaAniversarioPoupanca) {
+        this.diaAniversarioPoupanca = diaAniversarioPoupanca;
+    }
 }

@@ -8,21 +8,17 @@ public class ContaCorrente extends ContaPrincipal{
         super(cpf, nome, senha);
     }
 
-    public double solicitarTalao(double saldo){
+    public void solicitarTalao(){
 
         if (contadorTalao > 0){
             contadorTalao--;
-            saldo -= 30;
-            return saldo;
+            this.debito(30);
         } else {
             System.out.println("Quantidade de talão solicitado alcançou o limite de 3");
         }
-        return saldo;
     }
 
-
-
-
-
-
+    public int getContadorTalao() {
+        return contadorTalao;
+    }
 }
