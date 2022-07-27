@@ -1,6 +1,11 @@
 package empbankg8;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestaConta {
+
+
 
     public static void main(String[] args) {
 
@@ -40,6 +45,28 @@ public class TestaConta {
 
         System.out.println(maria.getnumMovimentacao());
 
+        System.out.println("------------------Banco de Dados---------------------");
+
+
+
+        BancoDeDados bancoDeDados = new BancoDeDados();
+
+
+        System.out.println("Não autorizado: " + bancoDeDados.listarContas(joaquim.getCpf(), joaquim.getSenha()));
+        System.out.println("Gerente Autorizado: " + bancoDeDados.listarContas("543", "123"));
+
+        System.out.println(bancoDeDados.adicionarConta(joaquim));
+        System.out.println(bancoDeDados.adicionarConta(maria));
+
+        ContaPrincipal conta = bancoDeDados.localizarConta(joaquim.getCpf());
+        System.out.println(conta);
+
     }
+
+
+
+
+
+
 
 }

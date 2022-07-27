@@ -21,4 +21,11 @@ public class ContaPoupanca extends ContaPrincipal{
     public void setDiaAniversarioPoupanca(int diaAniversarioPoupanca) {
         this.diaAniversarioPoupanca = diaAniversarioPoupanca;
     }
+
+    @Override
+    public String toString() {
+        return "ContaPoupanca{" +
+                "diaAniversarioPoupanca=" + diaAniversarioPoupanca +
+                '}';
+    }
 }

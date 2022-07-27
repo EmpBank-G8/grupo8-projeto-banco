@@ -21,4 +21,11 @@ public class ContaCorrente extends ContaPrincipal{
     public int getContadorTalao() {
         return contadorTalao;
     }
+
+    @Override
+    public String toString() {
+        return "ContaCorrente{" +
+                "contadorTalao=" + contadorTalao +
+                '}';
+    }
 }

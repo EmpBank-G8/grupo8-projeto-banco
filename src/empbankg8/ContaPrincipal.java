@@ -21,6 +21,9 @@ public class ContaPrincipal {
 		this.numMovimentacao = 0; //Na criação da conta não tem nenhuma movimentação.
 	}
 
+	public ContaPrincipal() {
+	}
+
 	public int getNumero() {
 		return numero;
 	}
