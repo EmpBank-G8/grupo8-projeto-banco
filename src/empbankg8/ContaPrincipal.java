@@ -69,12 +69,23 @@ public class ContaPrincipal {
 		this.senha = senha;
 	}
 	public void debito(double valor) {
-		this.saldo = this.saldo - valor;
-		this.numMovimentacao++;
+		if(this.numMovimentacao < 10) {
+			this.saldo = this.saldo - valor;
+			this.numMovimentacao++;
+			System.out.println("Operação realizada com sucesso!");
+		}else {
+			System.out.println("Você atingiu o numero máximo de operações!");
+		}
+		
 	}
 	public void credito(double valor) {
-		this.saldo = this.saldo + valor;
-		this.numMovimentacao++;
+		if (this.numMovimentacao < 10) {
+			this.saldo = this.saldo + valor;
+			this.numMovimentacao++;
+			System.out.println("Operação realizada com sucesso!");
+		}else {
+			System.out.println("Você atingiu o numero máximo de operações!");
+		}
 	}
 	public void desativar() { //Método para desativar conta.
 		this.ativo = false;	
