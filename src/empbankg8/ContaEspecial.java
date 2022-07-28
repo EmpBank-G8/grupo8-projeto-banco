@@ -17,11 +17,16 @@ public class ContaEspecial extends ContaPrincipal{
 		this.limite = limite;
 	}
 	public void usarLimite(double valor) {
-		double novoLimite = getLimite() - valor;
-		this.setLimite(novoLimite);
-		this.credito(valor);
+		if(valor <= limite) {
+			double novoLimite = getLimite() - valor;
+			this.setLimite(novoLimite);
+			this.credito(valor);
+			System.out.println("Operação realizada com sucesso!");
+		}else {
+			System.out.println("Limite indisponível!");
+		}
 	}
 	public String toString() {
-		return "\nNúmero: " + this.getNumero() + " | " + "Nome: " + this.getNome() + " | " + "Cpf: " + this.getCpf() + " | " + "Saldo: " + this.getSaldo() + " | " + "Limite: " + this.getLimite();
+		return "\nNúmero: " + this.getNumero() + " \n" + "Nome: " + this.getNome() + " \n" + "Cpf: " + this.getCpf() + " \n" + "Saldo: " + this.getSaldo() + " \n" + "Limite: " + this.getLimite();
 	}
 }
