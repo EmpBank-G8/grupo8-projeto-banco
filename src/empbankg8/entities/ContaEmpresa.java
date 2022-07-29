@@ -1,4 +1,4 @@
-package empbankg8;
+package empbankg8.entities;
 
 public class ContaEmpresa {
 		

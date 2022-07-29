@@ -1,5 +1,8 @@
 package empbankg8;
 
+import empbankg8.entities.ContaEspecial;
+import empbankg8.entities.ContaPrincipal;
+
 import java.util.ArrayList;
 
 public class Utils {

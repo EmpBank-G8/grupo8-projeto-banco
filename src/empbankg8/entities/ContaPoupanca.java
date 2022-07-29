@@ -1,6 +1,6 @@
-package empbankg8;
+package empbankg8.entities;
 
-public class ContaPoupanca extends ContaPrincipal{
+public class ContaPoupanca extends ContaPrincipal {
 
     private int diaAniversarioPoupanca;
 
@@ -27,5 +27,10 @@ public class ContaPoupanca extends ContaPrincipal{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+    @Override
+    public String toString() {
+        return "\nNúmero: " + this.getNumero() + " \n" + "Nome: " + this.getNome() + " \n" + "Cpf: " + this.getCpf() + " \n" + "Saldo: " + this.getSaldo();
+    }
   
 }
