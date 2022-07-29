@@ -22,9 +22,9 @@ public class ContaCorrente extends ContaPrincipal{
         return contadorTalao;
     }
 
-	@Override
-	public String getInformacaoEspecifica() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  @Override
+    public String getInformacaoEspecifica() {
+      // TODO Auto-generated method stub
+      return null;
+    }
 }

@@ -23,6 +23,9 @@ public abstract class ContaPrincipal {
 		this.tipoConta = tipoConta;
 	}
 
+	public ContaPrincipal() {
+	}
+
 	public int getNumero() {
 		return numero;
 	}
