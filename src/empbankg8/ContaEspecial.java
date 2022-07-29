@@ -5,7 +5,7 @@ public class ContaEspecial extends ContaPrincipal{
 	private double limite;
 	
 	public ContaEspecial(String cpf, String nome, String senha) {
-		super(cpf, nome, senha);
+		super(cpf, nome, senha,"ESPECIAL");
 		this.limite = 1000.00;
 	}
 
@@ -28,5 +28,11 @@ public class ContaEspecial extends ContaPrincipal{
 	}
 	public String toString() {
 		return "\nNúmero: " + this.getNumero() + " \n" + "Nome: " + this.getNome() + " \n" + "Cpf: " + this.getCpf() + " \n" + "Saldo: " + this.getSaldo() + " \n" + "Limite: " + this.getLimite();
+	}
+
+	@Override
+	public String getInformacaoEspecifica() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

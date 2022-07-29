@@ -7,7 +7,7 @@ public class ContaEstudantil extends ContaPrincipal {
 	private double limiteEstudantil = 5000d;
 
 	public ContaEstudantil(String cpf, String nome, String senha) {
-		super(cpf, nome, senha);
+		super(cpf, nome, senha, "ESTUDANTIL");
 	}
 
 	public double getLimiteEstudantil() {
@@ -23,6 +23,11 @@ public class ContaEstudantil extends ContaPrincipal {
 
 		}
 
+	}
+
+	@Override
+	public String getInformacaoEspecifica() {
+		return "Limite Estudantil R$:" + limiteEstudantil;
 	}
 
 }

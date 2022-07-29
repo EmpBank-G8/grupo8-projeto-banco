@@ -1,6 +1,6 @@
 package empbankg8;
 
-public class ContaPrincipal {
+public abstract class ContaPrincipal {
 	private int numero; //Numero da conta - Gerado automaticamente. Através da Classe GeradorNumConta.
 	private String cpf; //Cpf do usuário.
 	private double saldo; //Saldo do usuário.
@@ -8,9 +8,10 @@ public class ContaPrincipal {
 	private String nome; //Nome do usuário.
 	private String senha; //Senha do usuário.
 	private int numMovimentacao; //Variável para controlar o número de movimentações do usuário.
+	private String tipoConta;
 	
 	//Construtor da classe principal.
-	public ContaPrincipal(String cpf, String nome, String senha) { 
+	public ContaPrincipal(String cpf, String nome, String senha, String tipoConta) { 
 		super();
 		this.numero = GeradorNumConta.geraNumConta(); //Gerador do número da conta.
 		this.cpf = cpf;
@@ -19,6 +20,7 @@ public class ContaPrincipal {
 		this.nome = nome;
 		this.senha = senha;
 		this.numMovimentacao = 0; //Na criação da conta não tem nenhuma movimentação.
+		this.tipoConta = tipoConta;
 	}
 
 	public int getNumero() {
@@ -89,6 +91,12 @@ public class ContaPrincipal {
 	}
 	public void desativar() { //Método para desativar conta.
 		this.ativo = false;	
-	}	
+	}
+
+	public String getTipoConta() {	
+		return tipoConta;
+	}
+
+	public abstract String getInformacaoEspecifica();
 }
 

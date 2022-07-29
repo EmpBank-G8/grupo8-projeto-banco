@@ -3,6 +3,8 @@ package empbankg8;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import empbankg8.entities.ContaEstudantil;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -44,7 +46,12 @@ public class Main {
 					opcao = entrada.nextInt();
 					System.out.println(opcao);
 					break;
-					}	
+					}
+				case 5: {
+					ContaPrincipal contaEstudantil = new ContaEstudantil("123.045.456-78", "Cristiane Soares", "1234");
+					Utils.imprimirDadosDaConta(contaEstudantil);
+					Utils.imprimirMenuMovimentacao();
+				}
 				default:
 					opcao = 0;
 				}

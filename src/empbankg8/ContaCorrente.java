@@ -5,7 +5,7 @@ public class ContaCorrente extends ContaPrincipal{
     private int contadorTalao = 3;
 
     public ContaCorrente(String cpf, String nome, String senha) {
-        super(cpf, nome, senha);
+        super(cpf, nome, senha, "CORRENTE");
     }
 
     public void solicitarTalao(){
@@ -21,4 +21,10 @@ public class ContaCorrente extends ContaPrincipal{
     public int getContadorTalao() {
         return contadorTalao;
     }
+
+	@Override
+	public String getInformacaoEspecifica() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
