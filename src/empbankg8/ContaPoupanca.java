@@ -5,7 +5,7 @@ public class ContaPoupanca extends ContaPrincipal{
     private int diaAniversarioPoupanca;
 
     public ContaPoupanca(String cpf, String nome, String senha) {
-        super(cpf, nome, senha);
+        super(cpf, nome, senha, "POUPANÇA");
     }
 
     public void correcao(int dataInformada){
@@ -22,10 +22,10 @@ public class ContaPoupanca extends ContaPrincipal{
         this.diaAniversarioPoupanca = diaAniversarioPoupanca;
     }
 
-    @Override
-    public String toString() {
-        return "ContaPoupanca{" +
-                "diaAniversarioPoupanca=" + diaAniversarioPoupanca +
-                '}';
-    }
+@Override
+	public String getInformacaoEspecifica() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+  
 }
