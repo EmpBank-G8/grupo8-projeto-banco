@@ -1,6 +1,6 @@
-package empbankg8;
+package empbankg8.entities;
 
-public class ContaEspecial extends ContaPrincipal{
+public class ContaEspecial extends ContaPrincipal {
 
 	private double limite;
 	

@@ -1,7 +1,5 @@
 package empbankg8.entities;
 
-import empbankg8.ContaPrincipal;
-
 public class ContaEstudantil extends ContaPrincipal {
 
 	private double limiteEstudantil = 5000d;

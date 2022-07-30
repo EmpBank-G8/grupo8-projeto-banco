@@ -1,6 +1,6 @@
-package empbankg8;
+package empbankg8.entities;
 
-public class ContaCorrente extends ContaPrincipal{
+public class ContaCorrente extends ContaPrincipal {
 
     private int contadorTalao = 3;
 
@@ -22,9 +22,14 @@ public class ContaCorrente extends ContaPrincipal{
         return contadorTalao;
     }
 
-  @Override
+    @Override
     public String getInformacaoEspecifica() {
       // TODO Auto-generated method stub
       return null;
+    }
+
+    @Override
+    public String toString() {
+        return "\nNúmero: " + this.getNumero() + " \n" + "Nome: " + this.getNome() + " \n" + "Cpf: " + this.getCpf() + " \n" + "Saldo: " + this.getSaldo();
     }
 }

@@ -1,4 +1,6 @@
-package empbankg8;
+package empbankg8.entities;
+
+import empbankg8.GeradorNumConta;
 
 public abstract class ContaPrincipal {
 	private int numero; //Numero da conta - Gerado automaticamente. Através da Classe GeradorNumConta.

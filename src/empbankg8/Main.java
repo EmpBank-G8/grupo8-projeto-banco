@@ -3,14 +3,16 @@ package empbankg8;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import empbankg8.entities.ContaEstudantil;
+import empbankg8.entities.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
 		ArrayList<ContaEspecial> clientesContaEspecials = new ArrayList<>();
-		
+		ArrayList<ContaCorrente> contaCorrentes = new ArrayList<>();
+		ArrayList<ContaPoupanca> contaPoupancas = new ArrayList<>();
+
 		Scanner entrada = new Scanner(System.in);
 		
 		Utils.imprimeBemVindo();
@@ -37,6 +39,26 @@ public class Main {
 				opcao = entrada.nextInt();
 				
 				switch (opcao) {
+					case 1: {
+						ContaPoupanca poupanca = new ContaPoupanca(cpf, nome, senha);
+						System.out.println("Conta aberta com sucesso!");
+						contaPoupancas.add(poupanca);
+						System.out.println(poupanca.toString());
+						Utils.imprimeMenuPrincipal();
+						opcao = entrada.nextInt();
+						System.out.println(opcao);
+						break;
+					}
+					case 2: {
+						ContaCorrente contaCorrente = new ContaCorrente(cpf, nome, senha);
+						System.out.println("Conta aberta com sucesso!");
+						contaCorrentes.add(contaCorrente);
+						System.out.println(contaCorrente.toString());
+						Utils.imprimeMenuPrincipal();
+						opcao = entrada.nextInt();
+						System.out.println(opcao);
+						break;
+					}
 				case 3: {
 					ContaEspecial c1 = new ContaEspecial(cpf, nome, senha);
 					clientesContaEspecials.add(c1);
