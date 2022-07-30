@@ -1,6 +1,7 @@
 package empbankg8;
 
 import empbankg8.entities.ContaEspecial;
+import empbankg8.entities.ContaEstudantil;
 import empbankg8.entities.ContaPrincipal;
 
 import java.util.ArrayList;
@@ -9,7 +10,11 @@ public class Utils {
 
 	public static void imprimeBemVindo() {
 		System.out.println("*************************************");
+		System.out.println("*                                   *");
 		System.out.println("*      Bem-vindo(a) ao G8-Bank      *");
+		System.out.println("*                                   *");
+		System.out.println("* Nunca foi tão fácil ter um banco! *");
+		System.out.println("*                                   *");
 		System.out.println("*************************************");
 	}
 
@@ -35,16 +40,10 @@ public class Utils {
 	public static void imprimirDadosDaConta(ContaPrincipal conta) {
 		imprimeBemVindo();
 		System.out.println("\nCONTA " + conta.getTipoConta());
-		System.out.println("\nNome: " + conta.getNome());
+		System.out.println("\nNúmero: " + conta.getNumero());
+		System.out.println("Nome: " + conta.getNome());
 		System.out.println("CPF: " + conta.getCpf());
 		System.out.println("\nSaldo Atual: R$ " + conta.getSaldo() + " - " + conta.getInformacaoEspecifica());
-
-	}
-
-	public static void imprimirMenuMovimentacao() {
-		System.out.println("\nEscolha o tipo de movimentação: ");
-		System.out.println("C - Crédito");
-		System.out.println("D - Débito");
 
 	}
 
@@ -59,6 +58,17 @@ public class Utils {
 		System.out.println("0 - Sair");
 		System.out.print("Escolha a opção desejada: ");
 	}
+	
+	public static void imprimirOpcoesContaEstundantil() {
+		System.out.println("Qual operação você deseja realizar?\n ");
+		System.out.println("1 - Credito");
+		System.out.println("2 - Débito");
+		System.out.println("3 - Usar Limite Estudantil");
+		System.out.println("4 - Consultar Saldo");
+		System.out.println("5 - Consultar Limite Estudantil Disponível");
+		System.out.println("0 - Sair");
+		System.out.print("Escolha a opção desejada: ");
+	}
 
 	public static int login(int numConta, String codSenha, ArrayList<ContaEspecial> array) {
 		for (int i = 0; i < array.size(); i++) {
@@ -68,6 +78,15 @@ public class Utils {
 		}
 		return -1;
 
+	}
+	
+	public static int loginEstudantil(int numConta, String codSenha, ArrayList<ContaEstudantil> array) {
+		for (int i = 0; i < array.size(); i++) {
+			if (numConta == (array.get(i).getNumero()) && codSenha.equals(array.get(i).getSenha())) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public static void imprimirSaidaBanco() {
