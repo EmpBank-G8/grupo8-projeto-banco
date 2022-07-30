@@ -12,7 +12,9 @@ public class Main {
 		ArrayList<ContaEspecial> clientesContaEspecials = new ArrayList<>();
 		ArrayList<ContaCorrente> contaCorrentes = new ArrayList<>();
 		ArrayList<ContaPoupanca> contaPoupancas = new ArrayList<>();
-
+		ArrayList<ContaEmpresa> contaEmpresas = new ArrayList<>();
+		
+		
 		Scanner entrada = new Scanner(System.in);
 		
 		Utils.imprimeBemVindo();
@@ -69,6 +71,16 @@ public class Main {
 					System.out.println(opcao);
 					break;
 					}
+				case 4:{
+					ContaEmpresa empresa = new ContaEmpresa(cpf, nome, senha);
+					System.out.println("Conta aberta com sucesso!");
+					contaEmpresas.add(empresa);
+					System.out.println(empresa.toString());
+					Utils.imprimeMenuPrincipal();
+					opcao = entrada.nextInt();
+					System.out.println(opcao);
+					break;
+				}
 				case 5: {
 					ContaPrincipal contaEstudantil = new ContaEstudantil("123.045.456-78", "Cristiane Soares", "1234");
 					Utils.imprimirDadosDaConta(contaEstudantil);
