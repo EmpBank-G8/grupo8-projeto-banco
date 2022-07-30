@@ -5,7 +5,7 @@ public class ContaEmpresa extends ContaPrincipal {
 	private double emprestimoEmpresa = 10000.00;
 	
 	public ContaEmpresa(String cnpj, String razaoSocial, String senha) {
-		super(cnpj, razaoSocial, senha, "EMPRESA");
+		super(cnpj, razaoSocial, senha, "EMPRESA"); //comentando aqui pra refazer o pull//
 		
 	}
 	
