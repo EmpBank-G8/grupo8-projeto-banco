@@ -9,7 +9,11 @@ public class Utils {
 
 	public static void imprimeBemVindo() {
 		System.out.println("*************************************");
+		System.out.println("*                                   *");
 		System.out.println("*      Bem-vindo(a) ao G8-Bank      *");
+		System.out.println("*                                   *");
+		System.out.println("* Nunca foi tão fácil ter um banco! *");
+		System.out.println("*                                   *");
 		System.out.println("*************************************");
 	}
 
