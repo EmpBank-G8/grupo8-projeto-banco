@@ -15,12 +15,12 @@ public class ContaEmpresa extends ContaPrincipal {
 	}
 	
 	public void usarEmpresa(double valor) {
-		if (valor <= limiteEstudantil) {
+		if (valor <= emprestimoEmpresa){
 			credito(valor);
 			this.emprestimoEmpresa = this.emprestimoEmpresa - valor;
 		}else {
-			System.out.println("Operação não autorizada. " + "Valor disponível: " + this.limiteEstudantil);
-			
+			System.out.println("Operação não autorizada. " + "Valor disponível: " + this.emprestimoEmpresa);
+					
 		}
 	}
 
@@ -29,5 +29,11 @@ public class ContaEmpresa extends ContaPrincipal {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
+    @Override
+    public String toString() {
+        return "\nNúmero: " + this.getNumero() + " \n" + "Nome: " + this.getNome() + " \n" + "Cpf: " + this.getCpf() + " \n" + "Saldo: " + this.getSaldo();
+    }
+  
 }
+
