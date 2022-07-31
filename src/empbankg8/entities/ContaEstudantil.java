@@ -22,6 +22,10 @@ public class ContaEstudantil extends ContaPrincipal {
 		}
 
 	}
+	
+	public void debitar(double valor) {
+		this.debito(valor);
+	}
 
 	@Override
 	public String getInformacaoEspecifica() {
