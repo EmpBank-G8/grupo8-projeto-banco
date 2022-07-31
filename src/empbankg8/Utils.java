@@ -130,6 +130,15 @@ public class Utils {
 		}
 		return -1;
 	}
+	
+	public static int loginEmpresa(int numConta, String codSenha, ArrayList<ContaEmpresa> array) {
+		for (int i = 0; i < array.size(); i++) {
+			if (numConta == (array.get(i).getNumero()) && codSenha.equals(array.get(i).getSenha())) {
+				return i;
+			}
+		}
+		return -1;
+	}
 
 	public static void imprimirSaidaBanco() {
 		System.out.println("Obrigado por usar o G8-Bank!");

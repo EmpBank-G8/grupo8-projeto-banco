@@ -1,6 +1,5 @@
 package empbankg8;
 
-import java.security.Signature;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,8 +15,8 @@ public class Main {
 		ArrayList<ContaCorrente> contasCorrente = new ArrayList<>();
 		ArrayList<ContaPoupanca> contasPoupanca = new ArrayList<>();
 		ArrayList<ContaEstudantil> contasEstudantis = new ArrayList<>();
-    ArrayList<ContaEmpresa> contaEmpresas = new ArrayList<>();
-
+		ArrayList<ContaEmpresa> contasEmpresa = new ArrayList<>();
+		
 		Scanner entrada = new Scanner(System.in);
 
 		Utils.imprimeBemVindo();
@@ -79,6 +78,16 @@ public class Main {
 					System.out.println("Conta aberta com sucesso!");
 					contaEmpresas.add(empresa);
 					System.out.println(empresa.toString());
+					Utils.imprimeMenuPrincipal();
+					opcao = entrada.nextInt();
+					System.out.println(opcao);
+					break;
+				}
+				case 4: {
+					ContaEmpresa contaEmpresa = new ContaEmpresa(cpf, nome, senha);
+					contasEmpresa.add(contaEmpresa);
+					System.out.println("Conta aberta com sucesso! ");
+					System.out.println(contaEmpresa.toString());
 					Utils.imprimeMenuPrincipal();
 					opcao = entrada.nextInt();
 					System.out.println(opcao);
@@ -248,8 +257,47 @@ public class Main {
 						}
 						break;
 					}
-					case 4: // OPCAO CONTA EMPRESA
-						break;
+					case 4: { // OPCAO CONTA EMPRESA	
+						int indiceContaEmpresa = Utils.loginEmpresa(numConta, codSenha, contasEmpresa);
+						if(indiceContaEmpresa == -1) {
+							System.out.println("Número da conta ou senha incorretos!");
+							Utils.imprimeMenuPrincipal();
+							opcao = entrada.nextInt();
+							break;
+						} else {
+							ContaEmpresa contaEmpresaLogada = contasEmpresa.get(indiceContaEmpresa);
+							Utils.imprimirDadosDaConta(contaEmpresaLogada);
+							while(opcao != 0) {
+								Utils.imprimirOpcoesContaEstundantil();
+								opcao = entrada.nextInt();
+								if (opcao == 1) {
+									System.out.println("Qual valor você deseja creditar na conta? ");
+									double valor = entrada.nextDouble();
+									contaEmpresaLogada.credito(valor);
+									Utils.imprimirDadosDaConta(contaEmpresaLogada);
+								}else if(opcao ==2) {
+									System.out.println("Qual valor você deseja debitar na conta? ");
+									double valor = entrada.nextDouble();
+									contaEmpresaLogada.debitar(valor);
+									Utils.imprimirDadosDaConta(contaEmpresaLogada);
+								}else if(opcao == 3) {
+									System.out.println("Qual valor você deseja usar do seu limite para empréstimo? ");
+									double valor = entrada.nextDouble();
+									contaEmpresaLogada.usarEmpresa(valor);
+									Utils.imprimirDadosDaConta(contaEmpresaLogada);
+								}else if(opcao == 4) {
+									System.out.println("O saldo disponível é R$" + contaEmpresaLogada.getSaldo());
+								}else if(opcao == 5){
+									System.out.println("O limite para empréstimo disponível é R$" + contaEmpresaLogada.getEmprestimoEmpresa());
+								}else if(opcao == 0) {
+									Utils.imprimirSaidaBanco();
+									break;
+								}
+							}
+							break;
+						}
+	
+					}
 					case 5: { // OPCAO CONTA ESTUDANTIL	
 						int indiceContaEstudantil = Utils.loginEstudantil(numConta, codSenha, contasEstudantis);
 						if(indiceContaEstudantil == -1) {
@@ -304,7 +352,4 @@ public class Main {
 			}
 		}
 	}
-
-
-
 }
