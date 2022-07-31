@@ -1,10 +1,9 @@
 package empbankg8;
 
-import empbankg8.entities.ContaEspecial;
-import empbankg8.entities.ContaEstudantil;
-import empbankg8.entities.ContaPrincipal;
+import empbankg8.entities.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Utils {
 
@@ -47,6 +46,28 @@ public class Utils {
 
 	}
 
+	public static void imprimirOpcoesContaPoupanca() {
+		System.out.println("Qual operação você deseja realizar?\n ");
+		System.out.println("1 - Credito");
+		System.out.println("2 - Débito");
+		System.out.println("3 - Saldo");
+		System.out.println("0 - Sair");
+		System.out.print("Escolha a opção desejada: ");
+	}
+
+	public static void imprimirOpcoesContaCorrente() {
+		System.out.println("Qual operação você deseja realizar?\n ");
+		System.out.println("1 - Credito");
+		System.out.println("2 - Débito");
+		System.out.println("3 - Saldo");
+		System.out.println("4 - Consulta de Talões Solicitados");
+		System.out.println("5 - Menu Conta Corrente");
+
+		System.out.println("0 - Sair");
+		System.out.print("Escolha a opção desejada: ");
+	}
+
+
 	public static void imprimirOpcoesContaEspecial() {
 
 		System.out.println("Qual operação você deseja realizar?\n ");
@@ -71,6 +92,25 @@ public class Utils {
 		System.out.print("Escolha a opção desejada: ");
 	}
 
+
+	public static int loginPoupanca(int numConta, String codSenha, ArrayList<ContaPoupanca> array) {
+		for (int i = 0; i < array.size(); i++) {
+			if (numConta == (array.get(i).getNumero()) && codSenha.equals(array.get(i).getSenha())) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static int loginCorrente(int numConta, String codSenha, ArrayList<ContaCorrente> array) {
+		for (int i = 0; i < array.size(); i++) {
+			if (numConta == (array.get(i).getNumero()) && codSenha.equals(array.get(i).getSenha())) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
 	public static int login(int numConta, String codSenha, ArrayList<ContaEspecial> array) {
 		for (int i = 0; i < array.size(); i++) {
 			if (numConta == (array.get(i).getNumero()) && codSenha.equals(array.get(i).getSenha())) {
@@ -78,10 +118,20 @@ public class Utils {
 			}
 		}
 		return -1;
-
 	}
+
+
 	
 	public static int loginEstudantil(int numConta, String codSenha, ArrayList<ContaEstudantil> array) {
+		for (int i = 0; i < array.size(); i++) {
+			if (numConta == (array.get(i).getNumero()) && codSenha.equals(array.get(i).getSenha())) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public static int loginEmpresa(int numConta, String codSenha, ArrayList<ContaEmpresa> array) {
 		for (int i = 0; i < array.size(); i++) {
 			if (numConta == (array.get(i).getNumero()) && codSenha.equals(array.get(i).getSenha())) {
 				return i;
@@ -93,4 +143,8 @@ public class Utils {
 	public static void imprimirSaidaBanco() {
 		System.out.println("Obrigado por usar o G8-Bank!");
 	}
+
+
+
+
 }
