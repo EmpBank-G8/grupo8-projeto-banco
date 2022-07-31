@@ -72,10 +72,14 @@ public abstract class ContaPrincipal {
 		return numMovimentacao;
 	}
 
+	protected void setNumMovimentacao(int numMovimentacao) {
+		this.numMovimentacao = numMovimentacao;
+	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public void debito(double valor) {
+	protected void debito(double valor) {
 		if(this.numMovimentacao < 10) {
 			this.saldo = this.saldo - valor;
 			this.numMovimentacao++;
@@ -85,6 +89,8 @@ public abstract class ContaPrincipal {
 		}
 		
 	}
+
+
 	public void credito(double valor) {
 		if (this.numMovimentacao < 10) {
 			this.saldo = this.saldo + valor;
@@ -103,5 +109,7 @@ public abstract class ContaPrincipal {
 	}
 
 	public abstract String getInformacaoEspecifica();
+
+
 }
 
