@@ -5,7 +5,7 @@ public class ContaEmpresa extends ContaPrincipal {
 	private double emprestimoEmpresa = 10000.00;
 	
 	public ContaEmpresa(String cnpj, String razaoSocial, String senha) {
-		super(cnpj, razaoSocial, senha, "EMPRESA"); //comentando aqui pra refazer o pull//
+		super(cnpj, razaoSocial, senha, "EMPRESA");
 		
 	}
 	
@@ -15,25 +15,26 @@ public class ContaEmpresa extends ContaPrincipal {
 	}
 	
 	public void usarEmpresa(double valor) {
-
-		if (valor <= emprestimoEmpresa){
+		if (valor <= this.emprestimoEmpresa) {
 			credito(valor);
 			this.emprestimoEmpresa = this.emprestimoEmpresa - valor;
 		}else {
 			System.out.println("Operação não autorizada. " + "Valor disponível: " + this.emprestimoEmpresa);
+			
 		}
+	}
+	
+	public void debitar(double valor) {
+		this.debito(valor);
 	}
 
 	@Override
 	public String getInformacaoEspecifica() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Limite de Empréstimo " + emprestimoEmpresa;
 	}
-
-    @Override
-    public String toString() {
-        return "\nNúmero: " + this.getNumero() + " \n" + "Nome: " + this.getNome() + " \n" + "Cpf: " + this.getCpf() + " \n" + "Saldo: " + this.getSaldo();
-    }
-  
+	public String toString() {
+		return "\nNúmero: " + this.getNumero() + " \n" + "Nome: " + this.getNome() + " \n" + "Cpf: " + this.getCpf() + " \n" + "Saldo: " + this.getSaldo() + " \n" + "Limite: " + this.getEmprestimoEmpresa();
+	}
+	
 }
-
