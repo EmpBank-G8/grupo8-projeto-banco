@@ -15,11 +15,11 @@ public class ContaEmpresa extends ContaPrincipal {
 	}
 	
 	public void usarEmpresa(double valor) {
-		if (valor <= limiteEstudantil) {
+		if (valor <= emprestimoEmpresa) {
 			credito(valor);
 			this.emprestimoEmpresa = this.emprestimoEmpresa - valor;
 		}else {
-			System.out.println("Operação não autorizada. " + "Valor disponível: " + this.limiteEstudantil);
+			System.out.println("Operação não autorizada. " + "Valor disponível: " + this.emprestimoEmpresa);
 			
 		}
 	}
