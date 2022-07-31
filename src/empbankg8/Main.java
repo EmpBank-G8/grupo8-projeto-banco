@@ -72,16 +72,6 @@ public class Main {
 					opcao = entrada.nextInt();
 					System.out.println(opcao);
 					break;
-					}
-				case 4:{
-					ContaEmpresa empresa = new ContaEmpresa(cpf, nome, senha);  //comentando aqui pra refazer o pull//
-					System.out.println("Conta aberta com sucesso!");
-					contaEmpresas.add(empresa);
-					System.out.println(empresa.toString());
-					Utils.imprimeMenuPrincipal();
-					opcao = entrada.nextInt();
-					System.out.println(opcao);
-					break;
 				}
 				case 4: {
 					ContaEmpresa contaEmpresa = new ContaEmpresa(cpf, nome, senha);
