@@ -143,7 +143,7 @@ public class Main {
 									System.out.println("Qual valor você deseja pagar seu limite ?");
 									double valor = entrada.nextDouble();
 									clientesContaEspecials.get(indice).pagarLimiteUsado(valor);
-								} }else if(opcao == 0) {
+								}else if(opcao == 0) {
 									Utils.imprimirSaidaBanco();
 									break;
 								}
@@ -206,4 +206,5 @@ public class Main {
 				opcao = entrada.nextInt();
 			}
 		}
+	}
 }
