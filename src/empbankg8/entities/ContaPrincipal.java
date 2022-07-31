@@ -75,7 +75,7 @@ public abstract class ContaPrincipal {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public void debito(double valor) {
+	protected void debito(double valor) {
 		if(this.numMovimentacao < 10) {
 			this.saldo = this.saldo - valor;
 			this.numMovimentacao++;

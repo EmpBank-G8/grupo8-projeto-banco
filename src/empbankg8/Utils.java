@@ -55,6 +55,7 @@ public class Utils {
 		System.out.println("3 - Usar limite");
 		System.out.println("4 - Consultar saldo");
 		System.out.println("5 - Limite disponível");
+		System.out.println("6 - Pagar limite usado");
 		System.out.println("0 - Sair");
 		System.out.print("Escolha a opção desejada: ");
 	}
