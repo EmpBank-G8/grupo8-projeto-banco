@@ -1,4 +1,9 @@
 package empbankg8.entities;
+<<<<<<< HEAD:src/empbankg8/ContaEspecial.java
+=======
+
+public class ContaEspecial extends ContaPrincipal {
+>>>>>>> 97273702820a8c06143626277f1a3273d6b7552c:src/empbankg8/entities/ContaEspecial.java
 
 public class ContaEspecial extends ContaPrincipal {
 	

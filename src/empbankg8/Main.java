@@ -143,7 +143,7 @@ public class Main {
 									System.out.println("Qual valor você deseja pagar seu limite ?");
 									double valor = entrada.nextDouble();
 									clientesContaEspecials.get(indice).pagarLimiteUsado(valor);
-								} else if(opcao == 0) {
+								} }else if(opcao == 0) {
 									Utils.imprimirSaidaBanco();
 									break;
 								}
@@ -174,7 +174,7 @@ public class Main {
 								}else if(opcao ==2) {
 									System.out.println("Qual valor você deseja debitar na conta? ");
 									double valor = entrada.nextDouble();
-									//contaEstudantilLogada.debito(valor);
+									contaEstudantilLogada.debitar(valor);
 									Utils.imprimirDadosDaConta(contaEstudantilLogada);
 								}else if(opcao == 3) {
 									System.out.println("Qual valor você deseja usar do seu limite estudantil? ");
@@ -206,5 +206,4 @@ public class Main {
 				opcao = entrada.nextInt();
 			}
 		}
-	}
 }
