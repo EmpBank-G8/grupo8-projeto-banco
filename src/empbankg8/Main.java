@@ -16,6 +16,7 @@ public class Main {
 		ArrayList<ContaCorrente> contasCorrente = new ArrayList<>();
 		ArrayList<ContaPoupanca> contasPoupanca = new ArrayList<>();
 		ArrayList<ContaEstudantil> contasEstudantis = new ArrayList<>();
+    ArrayList<ContaEmpresa> contaEmpresas = new ArrayList<>();
 
 		Scanner entrada = new Scanner(System.in);
 
@@ -68,6 +69,16 @@ public class Main {
 					clientesContaEspecials.add(contaEspecial);
 					System.out.println("Conta aberta com sucesso! ");
 					System.out.println(contaEspecial.toString());
+					Utils.imprimeMenuPrincipal();
+					opcao = entrada.nextInt();
+					System.out.println(opcao);
+					break;
+					}
+				case 4:{
+					ContaEmpresa empresa = new ContaEmpresa(cpf, nome, senha);  //comentando aqui pra refazer o pull//
+					System.out.println("Conta aberta com sucesso!");
+					contaEmpresas.add(empresa);
+					System.out.println(empresa.toString());
 					Utils.imprimeMenuPrincipal();
 					opcao = entrada.nextInt();
 					System.out.println(opcao);
