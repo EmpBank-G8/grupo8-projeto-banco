@@ -91,6 +91,17 @@ public class Utils {
 		System.out.println("0 - Sair");
 		System.out.print("Escolha a opção desejada: ");
 	}
+	
+	public static void imprimirOpcoesContaEmpresa() {
+		System.out.println("Qual operação você deseja realizar?\n ");
+		System.out.println("1 - Credito");
+		System.out.println("2 - Débito");
+		System.out.println("3 - Usar empréstimo");
+		System.out.println("4 - Consultar Saldo");
+		System.out.println("5 - Consultar emprestimo Disponível");
+		System.out.println("0 - Sair");
+		System.out.print("Escolha a opção desejada: ");
+	}
 
 
 	public static int loginPoupanca(int numConta, String codSenha, ArrayList<ContaPoupanca> array) {
