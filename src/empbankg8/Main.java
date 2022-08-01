@@ -258,7 +258,7 @@ public class Main {
 							ContaEmpresa contaEmpresaLogada = contasEmpresa.get(indiceContaEmpresa);
 							Utils.imprimirDadosDaConta(contaEmpresaLogada);
 							while(opcao != 0) {
-								Utils.imprimirOpcoesContaEstundantil();
+								Utils.imprimirOpcoesContaEmpresa();
 								opcao = entrada.nextInt();
 								if (opcao == 1) {
 									System.out.println("Qual valor você deseja creditar na conta? ");
